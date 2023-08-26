@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Independance Day</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
 
@@ -22,14 +22,37 @@
           <div class="image">
           <img src="herobanner.png" alt="Hero Banner">
           </div>
+
+          <div class="quotess">
+            <p id="quoteText">Loading...</p>
+          </div>
+          <script>
+            const quotes = [
+            "India is a land of diversity, and this diversity is its strength. - Pranab Mukherjee",
+            "Unity in diversity is India's strength. There is simplicity in every Indian. There is unity in every corner of India. - Narendra Modi",
+            "India is a song to which every god has contributed a note. - Rabindranath Tagore",
+            "We are Indians, firstly and lastly. - B.R. Ambedkar",
+            "The essential thing in religion is making the heart pure. The kingdom of heaven is within us but only pure heart can see the 'king'! - Bhagat Singh"
+            ];
+            
+            const quoteText = document.getElementById("quoteText");
+            
+            
+            function getRandomQuote() {
+              const randomIndex = Math.floor(Math.random() * quotes.length);
+              return quotes[randomIndex];
+            }
+            
+            quoteText.textContent = getRandomQuote();
+            </script>
+
       </div>
 
-      <div class="container3">
-        
-        <div class="leader">
-          <img src="map.png" alt="Diversity Map">
+      <div class="videocontainer">
+        <div class="video">
+          <video src="videoplayback.webm"></video>
         </div>
-        <div class="quote">
+        <div class="description">
           <h2><span style="font-size:larger";">" </span>Unity in diversity is India's strength. There is simplicity in every Indian. There is unity in every corner of India. This is our strength.<span style="font-size:larger";"> "</span></h2>
           <h4><br> - Narendra Modi, Hon'ble Prime Minister</h4>
           <p style="font-size: large;">
@@ -149,8 +172,32 @@
 
 
       <div class="footer-copyright">
-        Made by <strong><a href="https://www.linkedin.com/in/aumjadhav8/">Aum Jadhav</a></strong>, <strong>Proud To Be Indian</strong>
+            Made by <strong><a href="https://www.linkedin.com/in/aumjadhav8/">Aum Jadhav</a></strong>, <strong>Proud To Be Indian <i class="fa-sharp fa-solid fa-heart fa-beat" style="color:red"></i></strong>
+        
       </div>
+      <script src="confetti.js"></script>
+    <!-- Confetti  JS-->
+    <script>
+
+        // start
+
+        const start = () => {
+            setTimeout(function() {
+                confetti.start()
+            }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+        };
+
+        //  Stop
+
+        const stop = () => {
+            setTimeout(function() {
+                confetti.stop()
+            }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+        };
+
+        start();
+        stop();
+    </script>
 </body>
 
 </html>
