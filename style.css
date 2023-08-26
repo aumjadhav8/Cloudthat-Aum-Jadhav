@@ -235,47 +235,57 @@ body{
  	max-width: 85%;
   	margin: 20px auto;
   	padding: 1rem;
+
 }
 
-.container3{
-	background: rgba( 255, 255, 255, 0.35 );
+.videocontainer 
+{
+    background: rgba( 255, 255, 255, 0.35 );
 	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 	backdrop-filter: blur( 5px );
 	-webkit-backdrop-filter: blur( 5px );
 	border-radius: 10px;
 	border: 1px solid rgba( 255, 255, 255, 0.18 );
-
-
-	width: 100%;
+    width: 100%;
  	max-width: 85%;
   	margin: 20px auto;
   	padding: 1rem;
-	display:flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	  display:flex;
+	  flex-wrap: wrap;
+	  justify-content: center;
 }
-
-.leader 
-{
-	width: 48%;
-    display: flex;
-    flex-direction: column;
-}
-
-.leader img{
-	width: 100%;
-	height: auto;
+.video {
+	border-radius: 10px;
+    flex: 1;
+    max-width: 50%; /* Display two videos side by side on desktop */
 }
 
 
-.quote {
-	display: block;
-    justify-content: center;
+.description {
+    flex: 1;
+    max-width: 50%;
+    padding: 0 20px; /* Add some space between video and description */
     text-align: center;
     max-width: 600px;
     margin-top: 30px;
-    padding: 20px;
 }
+@media (max-width: 768px) {
+    .videocontainer {
+      flex-direction: column;
+    }
+    .video {
+		max-width: 100%;
+      order: 1; /* Change the order of the image */
+    }
+    .description {
+		max-width: 100%;
+      order: 2; /* Change the order of the description */
+    }
+	.quotess{
+		max-width: 90%;
+		font-size: 0.5rem;
+	}
+  }
 
 
 /*Smooth Scrolling Effect*/
@@ -383,3 +393,21 @@ video {
 .container4 h1{
 	text-align: center;
 }
+
+
+
+/*Quote CSS*/
+.quotess {
+    text-align: center;
+    font-size: 24px;
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba( 255, 255, 255, 0.35 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 5px );
+	-webkit-backdrop-filter: blur( 5px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+  }
